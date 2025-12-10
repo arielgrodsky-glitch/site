@@ -32,12 +32,8 @@
 
                     <div class="service_items">
                         <h3>movies</h3>
-                        <div class="img">
-                            <button id="jumpscareBtn">
-                                <img src="img/movie.png" alt="movie">
-                            </button>
-                        </div>
-                        <p>We can recommend movies</p>
+                        <img src="img/movie.png" alt="movie_and_videos">
+                        <p>We can recommend movies and videos</p>
                     </div>
 
                     <div class="service_items">
@@ -68,26 +64,31 @@
         </div>
     </footer>
 
-    <!-- JUMPSCARE -->
+    <!-- JUMPSCARE OVERLAY -->
     <div id="jumpscare">
         <img src="img/jumpscare.png" alt="jumpscare">
         <audio id="sound" src="audio/jumpscare.mp3"></audio>
     </div>
 
+    <!-- JUMPSCARE SCRIPT -->
     <script>
-const btn = document.getElementById("jumpscareBtn");
+const images = document.querySelectorAll("main img");
 const jumpscare = document.getElementById("jumpscare");
 const sound = document.getElementById("sound");
 
-btn.onclick = () => {
-    jumpscare.style.display = "flex";
-    sound.currentTime = 0;
-    sound.play();
+images.forEach(img => {
+    img.addEventListener("click", (e) => {
+        e.preventDefault();
 
-    setTimeout(() => {
-        jumpscare.style.display = "none";
-    }, 800);
-};
+        jumpscare.style.display = "flex";
+        sound.currentTime = 0;
+        sound.play();
+
+        setTimeout(() => {
+            jumpscare.style.display = "none";
+        }, 800);
+    });
+});
     </script>
 
 </body>
