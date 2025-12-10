@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="Home">
+
+    <header>
+        <div class="container">
+            <div class="header_wrap">
+                <img src="img/logo.png" alt="Alternate Text" />
+                <h1>Freddy's Home</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contacts.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="Home">
+        <section class="section" id="section3">
+            <div class="container">
+                <div class="services_wrap">
+                    <h2>OUR SERVICES</h2>
+
+                    <div class="service_items">
+                        <h3>movies</h3>
+                        <div class="img">
+                            <button id="jumpscareBtn">
+                                <img src="img/movie.png" alt="movie">
+                            </button>
+                        </div>
+                        <p>We can recommend movies</p>
+                    </div>
+
+                    <div class="service_items">
+                        <h3>Games</h3>
+                        <img src="img/game.png" alt="games">
+                        <p>We can recommend games</p>
+                    </div>
+
+                    <div class="service_items">
+                        <h3>Info</h3>
+                        <img src="img/info.png" alt="info">
+                        <p>There is plenty of info</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="Home">
+        <div class="container">
+            <nav>
+                <img class="logo" src="img/logo.png" alt="Alternate Text" />
+                <div class="footer_wrap">
+                    <p>© 2025 My Website. All rights reserved.</p>
+                </div>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- JUMPSCARE -->
+    <div id="jumpscare">
+        <img src="img/jumpscare.png" alt="jumpscare">
+        <audio id="sound" src="audio/jumpscare.mp3"></audio>
+    </div>
+
+    <script>
+const btn = document.getElementById("jumpscareBtn");
+const jumpscare = document.getElementById("jumpscare");
+const sound = document.getElementById("sound");
+
+btn.onclick = () => {
+    jumpscare.style.display = "flex";
+    sound.currentTime = 0;
+    sound.play();
+
+    setTimeout(() => {
+        jumpscare.style.display = "none";
+    }, 800);
+};
+    </script>
+
+</body>
+</html>
