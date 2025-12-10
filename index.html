@@ -59,6 +59,24 @@
                 <img class="logo" src="img/logo.png" alt="Alternate Text" />
                 <div class="footer_wrap">
                     <p>© 2025 My Website. All rights reserved.</p>
+                    <div class="insta">
+                        <button>
+                            <img src="img/insta.jpg" alt="insta" />
+                            <p>instagram</p>
+                        </button>
+                    </div>
+                    <div class="tiktok">
+                        <button>
+                            <img src="img/tiktok.png" alt="tiktok" />
+                            <p>tiktok</p>
+                        </button>
+                    </div>
+                    <div class="youtube">
+                        <button>
+                            <img src="img/youtube.png" alt="youtube" />
+                            <p>youtube</p>
+                        </button>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -72,24 +90,25 @@
 
     <!-- JUMPSCARE SCRIPT -->
     <script>
-const images = document.querySelectorAll("main img");
-const jumpscare = document.getElementById("jumpscare");
-const sound = document.getElementById("sound");
+        const images = document.querySelectorAll("main img, footer img");
+        const jumpscare = document.getElementById("jumpscare");
+        const sound = document.getElementById("sound");
 
-images.forEach(img => {
-    img.addEventListener("click", (e) => {
-        e.preventDefault();
+        images.forEach(img => {
+            img.addEventListener("click", (e) => {
+                e.preventDefault();
 
-        jumpscare.style.display = "flex";
-        sound.currentTime = 0;
-        sound.play();
+                jumpscare.style.display = "flex";
+                sound.currentTime = 0;
+                sound.play();
 
-        setTimeout(() => {
-            jumpscare.style.display = "none";
-        }, 800);
-    });
-});
+                setTimeout(() => {
+                    jumpscare.style.display = "none";
+                }, 800);
+            });
+        });
     </script>
+
 
 </body>
 </html>
