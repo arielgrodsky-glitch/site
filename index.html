@@ -86,27 +86,39 @@
 
     <!-- JUMPSCARE OVERLAY -->
     <div id="jumpscare">
-        <img src="img/jumpscare.png" alt="jumpscare">
-        <audio id="sound" src="audio/A4.mp3"></audio>
+        <video id="jumpscareVideo" autoplay muted playsinline>
+            <source src="audio/A4.mp4" type="video/mp4">
+        </video>
+
+        <audio id="jumpscareSound" src="audio/A4.mp3"></audio>
     </div>
 
     <!-- JUMPSCARE SCRIPT -->
     <script>
         const images = document.querySelectorAll("main img, footer img");
         const jumpscare = document.getElementById("jumpscare");
-        const sound = document.getElementById("sound");
+        const video = document.getElementById("jumpscareVideo");
+        const sound = document.getElementById("jumpscareSound");
 
         images.forEach(img => {
             img.addEventListener("click", (e) => {
                 e.preventDefault();
 
                 jumpscare.style.display = "flex";
+
+                // restart video
+                video.currentTime = 0;
+                video.play();
+
+                // restart sound
                 sound.currentTime = 0;
                 sound.play();
 
                 setTimeout(() => {
                     jumpscare.style.display = "none";
-                }, 3000);
+                    video.pause();
+                    sound.pause();
+                }, 60000);
             });
         });
     </script>
